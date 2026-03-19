@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion</title>
+
+<style>
+/* TON CSS (inchangé) */
+body { margin:0; font-family:"Segoe UI", Arial; background:#f5f7fa; }
+
+#BandeMenuHaut {
+    position: fixed; top:0; left:0; width:100%; height:70px;
+    display:flex; justify-content:center; align-items:center;
+    background: linear-gradient(90deg,#002d80,#0052cc);
+}
+
+#MenuRubriques li { display:inline-block; margin:0 10px; list-style:none; }
+
+#MenuRubriques a {
+    padding:10px 20px; border-radius:50px;
+    text-decoration:none; color:white;
+    background:rgba(255,255,255,0.15);
+}
+
+main { margin-top:100px; padding:40px; text-align:center; }
+
+.section {
+    max-width:900px; margin:40px auto; background:white;
+    padding:30px; border-radius:15px;
+}
+
+#container { max-width:400px; margin:30px auto; text-align:left; }
+
+input {
+    width:100%; padding:12px; margin:8px 0 20px 0;
+    border-radius:10px; border:1px solid #ccc;
+}
+
+#submit {
+    width:100%; padding:12px;
+    border-radius:50px;
+    background: linear-gradient(90deg,#002d80,#0052cc);
+    color:white; border:none;
+}
+
+/* message */
+.message {
+    text-align:center;
+    margin-bottom:20px;
+    font-weight:bold;
+    color:red;
+}
+</style>
+</head>
+
+<body>
+
+<div id="BandeMenuHaut">
+<ul id="MenuRubriques">
+<li><a href="Upsided.html">Accueil</a></li>
+<li><a href="Partenaires.html">Partenaires</a></li>
+<li><a href="connexion.php" id="current">Connexion</a></li>
+<li><a href="chat.html">chat</a></li>
+</ul>
+</div>
+
+<main>
+<section class="section">
+<h1>Se connecter</h1>
+<p>Veuillez remplir les informations suivantes :</p>
+
+<!-- MESSAGE -->
+<div class="message">
+<?php echo $message; ?>
+</div>
+
+<form id="container" method="POST">
+
+    <label>Utilisateur :</label>
+    <input type="text" name="username" required>
+
+    <label>Mot de passe :</label>
+    <input type="password" name="password" required>
+
+    <input type="submit" id="submit" value="Se connecter">
+
+    <a href="inscription.html" class="inscription">S'inscrire</a>
+</form>
+
+</section>
+</main>
+
+</body>
+</html>
